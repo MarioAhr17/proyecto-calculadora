@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+  <style>
+    .cesta{
+        background-image: url(https://http2.mlstatic.com/D_NQ_NP_943653-MLU70847467417_082023-O.webp);
+        width: 500px;
+        height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+
+<div id="app" class="container">
+    No. 1 <input type="number" v-model.number="n1">
+    <img v-for="data in n1" src="https://static9.depositphotos.
+    com/1177973/1135/i/450/depositphotos_11352486-stock-photo-red-bitten-
+    apple-isolated-on.jpg" width="50px">
+    https://http2.mlstatic.com/D_NQ_NP_943653-MLU70847467417_082023-O.webp</div>
+    <pre>
+        {{data}}
+    </pre>
+   
+   
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+<script>
+  const { createApp } = Vue
+
+  createApp(
+    {
+    data() {
+      return {
+         numero : 0,
+         mostrar : false,
+         limite : 0
+       }
+    },
+    methods: {
+      cambiar(){
+        this.mostrar = false
+      }
+    }
+  }
+  ).mount('#app')
+</script>
+
+
+</body>
+</html><html>
+
+</html>
