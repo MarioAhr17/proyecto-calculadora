@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Proyecto Suma</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
  <style>
     .cesta{
@@ -100,12 +100,12 @@
      },
      
      resultado(){
-       if ((this.n1 + this.n2) == this.respuesta)
-         alert('correcto') 
-        else
-         alert('incorrecto')
-
-     }
+   const sumaCorrecta = this.n1 + this.n2;
+   if (sumaCorrecta === this.respuesta)
+     alert('correcto');
+   else
+     alert(`incorrecto, la respuesta correcta es ${sumaCorrecta}`);
+}
     }
   }
   ).mount('#app')
