@@ -32,7 +32,7 @@
       padding: 30px;
       margin-top: 30px;
       border-radius: 20px;
-      text-align:center;
+      text-align: center;
       font-weight: bold;
       font-style: italic;
     }
@@ -49,7 +49,7 @@
       background-color: lime;
       font-weight: bold;
       height: 10px;
-      font-size:smaller;
+      font-size: smaller;
     }
 
     .fw-bold {
@@ -119,7 +119,9 @@
           respuesta: 0,
           mostrarAlerta: false,
           mensajeAlerta: '',
-          colorAlerta: ''
+          colorAlerta: '',
+          correctas: 0,  // contador para respuestas correctas
+          incorrectas: 0 // contador para respuestas incorrectas
         }
       },
       methods: {
@@ -134,10 +136,12 @@
         resultado() {
           const sumaCorrecta = this.n1 + this.n2;
           if (sumaCorrecta === this.respuesta) {
-            this.mensajeAlerta = '¡Correcto!';
+            this.correctas++;  // Aumenta el contador de correctas
+            this.mensajeAlerta = `¡Correcto! Respuestas correctas: ${this.correctas}, Incorrectas: ${this.incorrectas}`;
             this.colorAlerta = 'alerta-verde';
           } else {
-            this.mensajeAlerta = `Incorrecto, la respuesta correcta es ${sumaCorrecta}`;
+            this.incorrectas++; // Aumenta el contador de incorrectas
+            this.mensajeAlerta = `Incorrecto. La respuesta correcta es ${sumaCorrecta}. Respuestas correctas: ${this.correctas}, Incorrectas: ${this.incorrectas}`;
             this.colorAlerta = 'alerta-roja';
           }
           this.mostrarAlerta = true;
