@@ -29,26 +29,33 @@
     }
 
     .alerta {
-      padding: 15px;
-      margin-top: 20px;
-      border-radius: 5px;
-      text-align: center;
+      padding: 30px;
+      margin-top: 30px;
+      border-radius: 20px;
+      text-align:center;
       font-weight: bold;
+      font-style: italic;
     }
 
     .alerta-roja {
       color: white;
       background-color: red;
+      height: 10px;
+      font-size: smaller;
     }
 
     .alerta-verde {
       color: white;
       background-color: lime;
+      font-weight: bold;
+      height: 10px;
+      font-size:smaller;
     }
 
     .fw-bold {
       font-weight: bold;
     }
+
   </style>
 </head>
 <body style="background-color: aqua;">
@@ -91,7 +98,7 @@
       </div>
     </div>
     
-    <div class="row mt-3">
+    <div class="row mt-3"> 
       <button @click="resultado()" class="btn btn-primary fw-bold">VALIDAR</button>
     </div>
 
