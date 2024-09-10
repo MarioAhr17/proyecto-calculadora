@@ -64,6 +64,7 @@ body {
     }
 
     .fw-bold {
+      font-size: 35px;
       font-weight: bold;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 color: cyan;
@@ -112,7 +113,7 @@ color: cyan;
     </div>
     
     <div class="row mt-3"> 
-      <button @click="resultado()" class="btn btn-primary fw-bold" style="color: black;">VALIDAR</button>
+      <button @click="resultado()" class="btn btn-primary " style="color: black;">VALIDAR</button>
     </div>
 
     <div v-if="mostrarAlerta" :class="['alerta', colorAlerta]" class="mt-3">
@@ -133,8 +134,8 @@ color: cyan;
           mostrarAlerta: false,
           mensajeAlerta: '',
           colorAlerta: '',
-          correctas: 0,  // contador para respuestas correctas
-          incorrectas: 0 // contador para respuestas incorrectas
+          correctas: 0,  
+          incorrectas: 0 
         }
       },
       methods: {
@@ -149,11 +150,11 @@ color: cyan;
         resultado() {
           const sumaCorrecta = this.n1 + this.n2;
           if (sumaCorrecta === this.respuesta) {
-            this.correctas++;  // Aumenta el contador de correctas
+            this.correctas++;  
             this.mensajeAlerta = `¡Correcto! Respuestas correctas: ${this.correctas}, Incorrectas: ${this.incorrectas}`;
             this.colorAlerta = 'alerta-verde';
           } else {
-            this.incorrectas++; // Aumenta el contador de incorrectas
+            this.incorrectas++; 
             this.mensajeAlerta = `Incorrecto. La respuesta correcta es ${sumaCorrecta}. Respuestas correctas: ${this.correctas}, Incorrectas: ${this.incorrectas}`;
             this.colorAlerta = 'alerta-roja';
           }
