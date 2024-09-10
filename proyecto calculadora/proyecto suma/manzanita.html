@@ -6,12 +6,20 @@
   <title>Proyecto Suma</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+<<<<<<< Updated upstream
 
 body {
       margin: 0;
       padding: 0;
       background-image: url('./img/comidita.png');
      background-color: bisque;
+=======
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('./img/comidita.png');
+      background-color: bisque;
+>>>>>>> Stashed changes
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -67,15 +75,22 @@ body {
       font-size: 35px;
       font-weight: bold;
       font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+<<<<<<< Updated upstream
 color: cyan;
+=======
+      color: cyan;
+>>>>>>> Stashed changes
     }
-
   </style>
 </head>
+<<<<<<< Updated upstream
 
   
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+=======
+>>>>>>> Stashed changes
 
+<body>
   <div id="app" class="container">
     <div class="mb-3">
       <label class="fw-bold">No. 1 :</label>
@@ -113,14 +128,29 @@ color: cyan;
     </div>
     
     <div class="row mt-3"> 
+<<<<<<< Updated upstream
       <button @click="resultado()" class="btn btn-primary " style="color: black;">VALIDAR</button>
+=======
+      <button @click="resultado()" class="btn btn-primary fw-bold" style="color: black;">VALIDAR</button>
+>>>>>>> Stashed changes
     </div>
+
+    <div class="text-center mb-3">
+      <button @click="playAudio" class="btn btn-secondary">Reproducir en loop</button>
+      <button @click="pauseAudio" class="btn btn-warning">Pausar audio</button>
+    </div>
+
+    <audio id="background-audio" loop>
+      <source src="correcto.mp3" type="audio/mpeg">
+      Tu navegador no soporta la reproducción de audio.
+    </audio>
 
     <div v-if="mostrarAlerta" :class="['alerta', colorAlerta]" class="mt-3">
       {{ mensajeAlerta }}
     </div>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const { createApp } = Vue;
@@ -134,19 +164,28 @@ color: cyan;
           mostrarAlerta: false,
           mensajeAlerta: '',
           colorAlerta: '',
+<<<<<<< Updated upstream
           correctas: 0,  
           incorrectas: 0 
+=======
+          correctas: 0,  // contador para respuestas correctas
+          incorrectas: 0, // contador para respuestas incorrectas
+          audio: null // referencia al elemento de audio
+>>>>>>> Stashed changes
         }
+      },
+      mounted() {
+        // Obtener referencia al elemento de audio cuando se monta la aplicación
+        this.audio = document.getElementById('audio');
       },
       methods: {
         validar(v) {
-          if (v == 'a') {
+          if (v === 'a') {
             if (this.n1 > 20) this.n1 = 20;
           } else {
             if (this.n2 > 20) this.n2 = 20;
           }
         },
-        
         resultado() {
           const sumaCorrecta = this.n1 + this.n2;
           if (sumaCorrecta === this.respuesta) {
@@ -159,6 +198,19 @@ color: cyan;
             this.colorAlerta = 'alerta-roja';
           }
           this.mostrarAlerta = true;
+        },
+        playAudio() {
+          const audio = document.getElementById('background-audio');
+          audio.play().then(() => {
+            console.log('Audio está reproduciendo en loop.');
+          }).catch(error => {
+            console.error('Error al reproducir el audio:', error);
+          });
+        },
+        pauseAudio() {
+          const audio = document.getElementById('background-audio');
+          audio.pause();
+          console.log('Audio pausado.');
         }
       }
     }).mount('#app');
